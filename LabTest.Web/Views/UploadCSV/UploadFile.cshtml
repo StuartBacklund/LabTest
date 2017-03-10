@@ -1,0 +1,55 @@
+﻿@model IEnumerable<LabTest.Web.ViewModels.UploadFileViewModel>
+
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Csv Results</h2>
+
+<p>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Parameters
+        </th>
+        <th>
+            Leader
+        </th>
+        <th>
+            Occurrences
+        </th>
+        <th>
+            Result
+        </th>
+        <th>
+            Message
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.Parameters)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxOccurringNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Occurrences)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Result)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+        </tr>
+    }
+</table>
